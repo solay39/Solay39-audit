@@ -1,0 +1,71 @@
+{
+  "metadata": {
+    "platform": "SOLAY39",
+    "version": "1.0",
+    "generatedAt": "2026-03-23T17:15:43.361Z",
+    "auditId": "bnb-attestation-1774286143303"
+  },
+  "project": {
+    "name": "BNB Attestation",
+    "network": "BSC",
+    "date": "2026-03-13",
+    "commit": "0x0F0df6cB17ee5E883eddFEf9153fC6036BDB4e37",
+    "scope": "0x0F0df6cB17ee5E883eddFEf9153fC6036BDB4e37"
+  },
+  "score": {
+    "value": 81,
+    "grade": "A",
+    "maxScore": 100
+  },
+  "findings": [
+    {
+      "id": 1774286116118,
+      "title": "OC-004 · Liquidity Pool NOT Locked",
+      "severity": "HIGH",
+      "status": "OPEN",
+      "description": "$1.213.326,05 liquidity but LP not locked.",
+      "impact": "Rug pull vector.",
+      "recommendation": "Lock LP for ≥6 months.",
+      "location": "DEX LP",
+      "likelihood": "Medium"
+    },
+    {
+      "id": 1774286107483,
+      "title": "Centralized Minting Authority",
+      "severity": "MEDIUM",
+      "status": "OPEN",
+      "description": "The contract has a mint function restricted by access control (e.g. onlyMinter, require(msg.sender == minter)). While not exploitable by the public, a compromised owner/minter can inflate supply.",
+      "impact": "A compromised or malicious owner could mint additional tokens, diluting existing holders.",
+      "recommendation": "Consider implementing a supply cap, timelocks, or multi-sig requirements for minting operations.",
+      "location": "Mint function with access control"
+    },
+    {
+      "id": 1774286116119,
+      "title": "OC-000 · Risk Score: 45/100",
+      "severity": "MEDIUM",
+      "status": "OPEN",
+      "description": "BNB Attestation (BAS) on BSC. Risk Score: 45/100. MEDIUM RISK - Some concerns identified. Proceed with caution.",
+      "impact": "RUG PULL ASSESSMENT:\n\nDirect Rug Indicators:\n- Honeypot: Unlikely\n- LP Lock: NO or UNKNOWN (risk)\n- Ownership: Active (risk)\n\nProbability: LOWER (<30%)\n\nThe main risk is NOT technical but ECONOMIC - concentrated supply with low liquidity.",
+      "recommendation": "FINAL RECOMMENDATION:\n\nRisk Score: 45/100\n\nPROCEED WITH EXTREME CAUTION:\n- Moderate risks identified\n- Only invest what you can afford to lose\n- Set stop losses",
+      "location": "0x0F0df6cB17ee5E883eddFEf9153fC6036BDB4e37",
+      "likelihood": "Medium"
+    }
+  ],
+  "summary": {
+    "totalFindings": 3,
+    "critical": 0,
+    "high": 1,
+    "medium": 2,
+    "low": 0,
+    "info": 0,
+    "resolved": 0,
+    "open": 3
+  },
+  "integrity": {
+    "reportId": "solay39-audit-bnb-attestation-1774286143303",
+    "sha256": "4c1bb4fa9c0ce177ef6f6f0403b9693d76227bd1d2b22b986af9e717c588729d",
+    "timestamp": "2026-03-23T17:15:43.318Z",
+    "auditorSignature": "Solay39 Founder — cryptographically bound to report content",
+    "verificationUrl": "https://www.solay39.eu/verify/bnb-attestation-1774286143303"
+  }
+}
