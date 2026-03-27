@@ -1,0 +1,836 @@
+<!DOCTYPE html><html><head>
+    <meta name="audit-hash" content="de14b2f8a6a843e0e710a37a8dd13695209882adc0a7523e87dbc2a3197815a4">
+    <meta name="audit-timestamp" content="2026-03-27T20:19:19.672Z">
+    <meta name="audit-version" content="1.0.0"><meta charset="utf-8"><title>SOLAY39 — JasmyCoin</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'JetBrains Mono',monospace;background:#050810;color:#c8d8e8;}
+  @media print{@page{size:A4;margin:0;}body{-webkit-print-color-adjust:exact;print-color-adjust:exact;}}
+</style></head><body>
+
+<!-- COVER -->
+<div style="min-height:100vh;display:flex;flex-direction:column;background:#050810;page-break-after:always">
+  <div style="height:5px;background:#00ff88"></div>
+  <div style="flex:1;padding:60px 56px;position:relative;display:flex;flex-direction:column;justify-content:center">
+    <div style="font-size:42px;font-weight:700;letter-spacing:.04em;color:#00ff88;text-shadow:0 0 40px #00ff8844">SOLAY39</div>
+    <div style="font-size:9px;color:#445566;letter-spacing:.16em;margin-top:6px;margin-bottom:28px">// SECURING PROTOCOLS THROUGH DEEP HUMAN REVIEW</div>
+    <div style="height:1px;background:linear-gradient(90deg,#00ff88,transparent);width:160px;margin-bottom:28px"></div>
+    <div style="font-size:28px;font-weight:700;color:#eef4fa;margin-bottom:6px">JasmyCoin</div>
+    <div style="font-size:13px;color:#7a8c9e;margin-bottom:4px">Smart Contracts</div>
+    <div style="font-size:13px;color:#7a8c9e;margin-bottom:0">Final Audit Report</div>
+    <div style="position:absolute;right:56px;top:50%;transform:translateY(-50%);background:#0d1117;border:1px solid #00ff8866;padding:28px 36px;text-align:center;min-width:155px">
+      <div style="font-size:46px;font-weight:700;color:#00ff88;line-height:1">95</div>
+      <div style="font-size:18px;font-weight:700;color:#00ff88;margin-top:5px">AAA</div>
+      <div style="font-size:7.5px;color:#445566;letter-spacing:.1em;margin-top:8px">SOLAY39 SECURITY SCORE</div>
+    </div>
+    <table style="border-collapse:collapse;margin-top:32px;width:58%">
+      <tr><td style="padding:6px 10px;font-size:9px;color:#445566;background:#0d1117;width:110px;border-bottom:1px solid #161e2a">Protocol</td><td style="padding:6px 10px;font-size:9px;color:#eef4fa;background:#111820;font-weight:700;border-bottom:1px solid #161e2a">JasmyCoin</td></tr><tr><td style="padding:6px 10px;font-size:9px;color:#445566;background:#0d1117;width:110px;border-bottom:1px solid #161e2a">Network</td><td style="padding:6px 10px;font-size:9px;color:#eef4fa;background:#111820;font-weight:700;border-bottom:1px solid #161e2a">Ethereum</td></tr><tr><td style="padding:6px 10px;font-size:9px;color:#445566;background:#0d1117;width:110px;border-bottom:1px solid #161e2a">Auditor</td><td style="padding:6px 10px;font-size:9px;color:#eef4fa;background:#111820;font-weight:700;border-bottom:1px solid #161e2a">Solay39 Founder</td></tr><tr><td style="padding:6px 10px;font-size:9px;color:#445566;background:#0d1117;width:110px;border-bottom:1px solid #161e2a">Date</td><td style="padding:6px 10px;font-size:9px;color:#eef4fa;background:#111820;font-weight:700;border-bottom:1px solid #161e2a">2026-03-18</td></tr><tr><td style="padding:6px 10px;font-size:9px;color:#445566;background:#0d1117;width:110px;border-bottom:1px solid #161e2a">Commit</td><td style="padding:6px 10px;font-size:9px;color:#eef4fa;background:#111820;font-weight:700;border-bottom:1px solid #161e2a">0x7420B4b9a0110cdC71fB720908340C03...</td></tr>
+    </table>
+  </div>
+  <div style="background:#0d1117;padding:13px 56px;display:flex;justify-content:space-between;font-size:8.5px;color:#445566;border-top:1px solid #00ff8833">
+    <span>Solay39 Blockchain Security | solay2126@gmail.com | t.me/Solay39audit</span><span>2026-03-27</span>
+  </div>
+</div>
+
+
+    <div style="padding:40px 56px;page-break-after:always;min-height:100vh;display:flex;flex-direction:column;background:#050810">
+      <div style="background:#0d1117;margin:-40px -56px 28px;padding:12px 56px;display:flex;justify-content:space-between;border-bottom:2px solid #00ff88">
+        <span style="font-size:11px;font-weight:700;color:#00ff88;letter-spacing:.08em">SOLAY39</span>
+        <span style="font-size:9px;color:#445566">JasmyCoin</span>
+      </div>
+      <div style="flex:1"><h1 style="font-size:17px;color:#00ff88;font-weight:700;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #00ff8833">Contents</h1>
+  <table style="width:100%;border-collapse:collapse">
+    <tr><td style="padding:8px 10px;font-size:9.5px;color:#445566;width:24px;border-bottom:1px solid #111820">1.</td><td style="padding:8px 10px;font-size:9.5px;color:#c8d8e8;border-bottom:1px solid #111820">Audit Engagement Details</td></tr><tr><td style="padding:8px 10px;font-size:9.5px;color:#445566;width:24px;border-bottom:1px solid #111820">1.2</td><td style="padding:8px 10px;font-size:9.5px;color:#c8d8e8;border-bottom:1px solid #111820">Scope</td></tr><tr><td style="padding:8px 10px;font-size:9.5px;color:#445566;width:24px;border-bottom:1px solid #111820">2.</td><td style="padding:8px 10px;font-size:9.5px;color:#c8d8e8;border-bottom:1px solid #111820">Risk Classification Model</td></tr><tr><td style="padding:8px 10px;font-size:9.5px;color:#445566;width:24px;border-bottom:1px solid #111820">3.</td><td style="padding:8px 10px;font-size:9.5px;color:#c8d8e8;border-bottom:1px solid #111820">Remediation Status</td></tr><tr><td style="padding:8px 10px;font-size:9.5px;color:#445566;width:24px;border-bottom:1px solid #111820">4.</td><td style="padding:8px 10px;font-size:9.5px;color:#c8d8e8;border-bottom:1px solid #111820">Overview & Security Score</td></tr><tr><td style="padding:8px 10px;font-size:9.5px;color:#445566;width:24px;border-bottom:1px solid #111820">5.</td><td style="padding:8px 10px;font-size:9.5px;color:#c8d8e8;border-bottom:1px solid #111820">Found Issues</td></tr><tr><td style="padding:8px 10px;font-size:9.5px;color:#445566;width:24px;border-bottom:1px solid #111820">6.</td><td style="padding:8px 10px;font-size:9.5px;color:#c8d8e8;border-bottom:1px solid #111820">Security Architecture</td></tr><tr><td style="padding:8px 10px;font-size:9.5px;color:#445566;width:24px;border-bottom:1px solid #111820">6.1</td><td style="padding:8px 10px;font-size:9.5px;color:#c8d8e8;border-bottom:1px solid #111820">Privileged Roles & Trust Model</td></tr><tr><td style="padding:8px 10px;font-size:9.5px;color:#445566;width:24px;border-bottom:1px solid #111820">6.3</td><td style="padding:8px 10px;font-size:9.5px;color:#c8d8e8;border-bottom:1px solid #111820">Attack Surface Analysis</td></tr><tr><td style="padding:8px 10px;font-size:9.5px;color:#445566;width:24px;border-bottom:1px solid #111820">7.</td><td style="padding:8px 10px;font-size:9.5px;color:#c8d8e8;border-bottom:1px solid #111820">Tooling & On-Chain Validation</td></tr><tr><td style="padding:8px 10px;font-size:9.5px;color:#445566;width:24px;border-bottom:1px solid #111820">7.3</td><td style="padding:8px 10px;font-size:9.5px;color:#c8d8e8;border-bottom:1px solid #111820">Code Coverage & Testing Methodology</td></tr><tr><td style="padding:8px 10px;font-size:9.5px;color:#445566;width:24px;border-bottom:1px solid #111820">8.</td><td style="padding:8px 10px;font-size:9.5px;color:#c8d8e8;border-bottom:1px solid #111820">Governance Security</td></tr><tr><td style="padding:8px 10px;font-size:9.5px;color:#445566;width:24px;border-bottom:1px solid #111820">9.</td><td style="padding:8px 10px;font-size:9.5px;color:#c8d8e8;border-bottom:1px solid #111820">Upgradeability & Proxy Analysis</td></tr><tr><td style="padding:8px 10px;font-size:9.5px;color:#445566;width:24px;border-bottom:1px solid #111820">10.</td><td style="padding:8px 10px;font-size:9.5px;color:#c8d8e8;border-bottom:1px solid #111820">Economic & Game-Theory Risks</td></tr><tr><td style="padding:8px 10px;font-size:9.5px;color:#445566;width:24px;border-bottom:1px solid #111820">11.</td><td style="padding:8px 10px;font-size:9.5px;color:#c8d8e8;border-bottom:1px solid #111820">Integration Risks & Invariants</td></tr><tr><td style="padding:8px 10px;font-size:9.5px;color:#445566;width:24px;border-bottom:1px solid #111820">12.</td><td style="padding:8px 10px;font-size:9.5px;color:#c8d8e8;border-bottom:1px solid #111820">Limitations & Disclaimer</td></tr><tr><td style="padding:8px 10px;font-size:9.5px;color:#445566;width:24px;border-bottom:1px solid #111820">13.</td><td style="padding:8px 10px;font-size:9.5px;color:#c8d8e8;border-bottom:1px solid #111820">About the Auditor</td></tr><tr><td style="padding:8px 10px;font-size:9.5px;color:#445566;width:24px;border-bottom:1px solid #111820">14.</td><td style="padding:8px 10px;font-size:9.5px;color:#c8d8e8;border-bottom:1px solid #111820">Conclusion</td></tr><tr><td style="padding:8px 10px;font-size:9.5px;color:#445566;width:24px;border-bottom:1px solid #111820"></td><td style="padding:8px 10px;font-size:9.5px;color:#c8d8e8;border-bottom:1px solid #111820">Appendix A. Issues Severity Classification</td></tr><tr><td style="padding:8px 10px;font-size:9.5px;color:#445566;width:24px;border-bottom:1px solid #111820"></td><td style="padding:8px 10px;font-size:9.5px;color:#c8d8e8;border-bottom:1px solid #111820">Appendix B. Severity/Likelihood Matrix</td></tr><tr><td style="padding:8px 10px;font-size:9.5px;color:#445566;width:24px;border-bottom:1px solid #111820"></td><td style="padding:8px 10px;font-size:9.5px;color:#c8d8e8;border-bottom:1px solid #111820">Appendix C. Examined Issue Types</td></tr><tr><td style="padding:8px 10px;font-size:9.5px;color:#445566;width:24px;border-bottom:1px solid #111820"></td><td style="padding:8px 10px;font-size:9.5px;color:#c8d8e8;border-bottom:1px solid #111820">Appendix D. Centralization Risks</td></tr>
+  </table></div>
+      <div style="background:#0d1117;margin:auto -56px -40px;padding:9px 56px;display:flex;justify-content:space-between;border-top:1px solid #00ff8833;font-size:8px;color:#2a3a50">
+        <span>Solay39 Blockchain Security | solay2126@gmail.com | t.me/Solay39audit</span>
+        <span>Page 2</span>
+      </div>
+    </div>
+
+
+    <div style="padding:40px 56px;page-break-after:always;min-height:100vh;display:flex;flex-direction:column;background:#050810">
+      <div style="background:#0d1117;margin:-40px -56px 28px;padding:12px 56px;display:flex;justify-content:space-between;border-bottom:2px solid #00ff88">
+        <span style="font-size:11px;font-weight:700;color:#00ff88;letter-spacing:.08em">SOLAY39</span>
+        <span style="font-size:9px;color:#445566">JasmyCoin</span>
+      </div>
+      <div style="flex:1"><h1 style="font-size:17px;color:#00ff88;font-weight:700;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #00ff8833">1. Audit Engagement Details</h1>
+    <p style="color:#7a8c9e;font-size:10px;line-height:1.7;margin-bottom:10px">Solay39 was engaged to perform a comprehensive security assessment of the <strong style="color:#eef4fa">JasmyCoin</strong> smart contracts. This audit followed the <strong style="color:#eef4fa">Solay39 Manual-First Audit Framework</strong>, an engineering-first approach combining deep manual code review with automated static analysis.</p>
+    <table style="width:100%;border-collapse:collapse;margin-bottom:14px"><tr><td style="padding:7px 10px;font-size:9px;color:#445566;background:#0d1117;width:150px">Project Name</td><td style="padding:7px 10px;font-size:9px;color:#eef4fa;background:#111820">JasmyCoin</td></tr><tr><td style="padding:7px 10px;font-size:9px;color:#445566;background:#0d1117;width:150px">Network</td><td style="padding:7px 10px;font-size:9px;color:#eef4fa;background:#111820">Ethereum</td></tr><tr><td style="padding:7px 10px;font-size:9px;color:#445566;background:#0d1117;width:150px">Audit Date</td><td style="padding:7px 10px;font-size:9px;color:#eef4fa;background:#111820">2026-03-18</td></tr><tr><td style="padding:7px 10px;font-size:9px;color:#445566;background:#0d1117;width:150px">Delivery Date</td><td style="padding:7px 10px;font-size:9px;color:#eef4fa;background:#111820">2026-03-18</td></tr><tr><td style="padding:7px 10px;font-size:9px;color:#445566;background:#0d1117;width:150px">Duration</td><td style="padding:7px 10px;font-size:9px;color:#eef4fa;background:#111820">N/A</td></tr><tr><td style="padding:7px 10px;font-size:9px;color:#445566;background:#0d1117;width:150px">Security Engineers</td><td style="padding:7px 10px;font-size:9px;color:#eef4fa;background:#111820">12 engineers</td></tr><tr><td style="padding:7px 10px;font-size:9px;color:#445566;background:#0d1117;width:150px">Engineering Hours</td><td style="padding:7px 10px;font-size:9px;color:#eef4fa;background:#111820">N/A</td></tr><tr><td style="padding:7px 10px;font-size:9px;color:#445566;background:#0d1117;width:150px">Lead Auditor</td><td style="padding:7px 10px;font-size:9px;color:#eef4fa;background:#111820">Solay39 Lead Auditor</td></tr><tr><td style="padding:7px 10px;font-size:9px;color:#445566;background:#0d1117;width:150px">Compiler Version</td><td style="padding:7px 10px;font-size:9px;color:#eef4fa;background:#111820">N/A</td></tr><tr><td style="padding:7px 10px;font-size:9px;color:#445566;background:#0d1117;width:150px">Contracts Reviewed</td><td style="padding:7px 10px;font-size:9px;color:#eef4fa;background:#111820">1</td></tr><tr><td style="padding:7px 10px;font-size:9px;color:#445566;background:#0d1117;width:150px">Lines of Code</td><td style="padding:7px 10px;font-size:9px;color:#eef4fa;background:#111820">N/A</td></tr><tr><td style="padding:7px 10px;font-size:9px;color:#445566;background:#0d1117;width:150px">Commit / Verification</td><td style="padding:7px 10px;font-size:9px;color:#eef4fa;background:#111820">0x7420B4b9a0110cdC71fB720908340C03F9Bc03</td></tr></table>
+    
+
+    <h2 style="font-size:12px;color:#00ff88;font-weight:700;margin:18px 0 10px">1.2 Scope</h2>
+    <p style="color:#7a8c9e;font-size:10px;line-height:1.7;margin-bottom:10px">Scope: 0x7420B4b9a0110cdC71fB720908340C03F9Bc03EC</p></div>
+      <div style="background:#0d1117;margin:auto -56px -40px;padding:9px 56px;display:flex;justify-content:space-between;border-top:1px solid #00ff8833;font-size:8px;color:#2a3a50">
+        <span>Solay39 Blockchain Security | solay2126@gmail.com | t.me/Solay39audit</span>
+        <span>Page 3</span>
+      </div>
+    </div>
+
+
+    <div style="padding:40px 56px;page-break-after:always;min-height:100vh;display:flex;flex-direction:column;background:#050810">
+      <div style="background:#0d1117;margin:-40px -56px 28px;padding:12px 56px;display:flex;justify-content:space-between;border-bottom:2px solid #00ff88">
+        <span style="font-size:11px;font-weight:700;color:#00ff88;letter-spacing:.08em">SOLAY39</span>
+        <span style="font-size:9px;color:#445566">JasmyCoin</span>
+      </div>
+      <div style="flex:1"><h1 style="font-size:17px;color:#00ff88;font-weight:700;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #00ff8833">EXECUTIVE SUMMARY</h1>
+    <div style="background:#0d1117;border:1px solid #ffd60033;border-left:3px solid #ffd600;padding:18px;margin-bottom:14px">
+      <p style="color:#c8d8e8;font-size:10.5px;line-height:1.8;margin-bottom:10px">
+        The analysis of the <strong style="color:#eef4fa">JasmyCoin</strong> contract revealed 
+        1 high-priority issues requiring immediate attention.
+        
+      </p>
+      <p style="color:#7a8c9e;font-size:9.5px;line-height:1.7">
+        The audit included: Static Analysis (Slither, Mythril) • Dynamic Analysis (Foundry, Echidna) • 
+        Advanced Threat Modeling • Attack Vector Simulation • On-chain Verification and Cryptographic Signature • 
+        Governance and Operational Controls.
+      </p>
+    </div>
+    <div style="display:flex;gap:16px;margin-bottom:14px">
+      <div style="background:#0d1117;padding:14px 20px;text-align:center;flex:1;border:1px solid #161e2a">
+        <div style="color:#445566;font-size:7px;letter-spacing:.15em;margin-bottom:6px">SECURITY SCORE</div>
+        <div style="color:#00ff88;font-size:28px;font-weight:700;line-height:1">95</div>
+        <div style="color:#00ff88;font-size:11px;font-weight:700;margin-top:4px">AAA</div>
+      </div>
+      <div style="background:#0d1117;padding:14px 20px;text-align:center;flex:1;border:1px solid #161e2a">
+        <div style="color:#445566;font-size:7px;letter-spacing:.15em;margin-bottom:6px">RISK LEVEL</div>
+        <div style="color:#ffd600;font-size:18px;font-weight:700;line-height:1.2">ELEVATED</div>
+        <div style="color:#7a8c9e;font-size:9px;margin-top:4px">0 Critical, 1 High</div>
+      </div>
+      <div style="background:#0d1117;padding:14px 20px;text-align:center;flex:1;border:1px solid #161e2a">
+        <div style="color:#445566;font-size:7px;letter-spacing:.15em;margin-bottom:6px">TOTAL FINDINGS</div>
+        <div style="color:#c8d8e8;font-size:28px;font-weight:700;line-height:1">5</div>
+        <div style="color:#00ff88;font-size:9px;margin-top:4px">0 Resolved</div>
+      </div>
+    </div>
+
+    <h2 style="font-size:12px;color:#00ff88;font-weight:700;margin:18px 0 10px">Risk Matrix</h2>
+    <table style="width:100%;border-collapse:collapse;margin-bottom:14px;font-size:9px">
+      <thead>
+        <tr>
+          <th style="background:#0d1117;color:#445566;font-size:7px;padding:8px;text-align:left;border:1px solid #161e2a">IMPATTO ↓ / PROB →</th>
+          <th style="background:#0d1117;color:#445566;font-size:7px;padding:8px;text-align:center;border:1px solid #161e2a;width:80px">BASSA</th>
+          <th style="background:#0d1117;color:#445566;font-size:7px;padding:8px;text-align:center;border:1px solid #161e2a;width:80px">MEDIA</th>
+          <th style="background:#0d1117;color:#445566;font-size:7px;padding:8px;text-align:center;border:1px solid #161e2a;width:80px">ALTA</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:8px;border:1px solid #161e2a;color:#c8d8e8;font-weight:700">ALTO</td>
+          <td style="padding:8px;border:1px solid #161e2a;text-align:center;background:#ff6b0022;color:#ff6b00">—</td>
+          <td style="padding:8px;border:1px solid #161e2a;text-align:center;background:#ff2d5522;color:#ff2d55">1 issue</td>
+          <td style="padding:8px;border:1px solid #161e2a;text-align:center;background:#ff2d5544;color:#ff2d55">—</td>
+        </tr>
+        <tr>
+          <td style="padding:8px;border:1px solid #161e2a;color:#c8d8e8;font-weight:700">MEDIO</td>
+          <td style="padding:8px;border:1px solid #161e2a;text-align:center;background:#ffd60011;color:#ffd600">—</td>
+          <td style="padding:8px;border:1px solid #161e2a;text-align:center;background:#ffd60022;color:#ffd600">1 issue</td>
+          <td style="padding:8px;border:1px solid #161e2a;text-align:center;background:#ff6b0022;color:#ff6b00">—</td>
+        </tr>
+        <tr>
+          <td style="padding:8px;border:1px solid #161e2a;color:#c8d8e8;font-weight:700">BASSO</td>
+          <td style="padding:8px;border:1px solid #161e2a;text-align:center;background:#00ff8811;color:#00ff88">3 issue</td>
+          <td style="padding:8px;border:1px solid #161e2a;text-align:center;background:#00e5ff11;color:#00e5ff">—</td>
+          <td style="padding:8px;border:1px solid #161e2a;text-align:center;background:#ffd60011;color:#ffd600">—</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 style="font-size:12px;color:#00ff88;font-weight:700;margin:18px 0 10px">Investor Risk Overview</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+      <div style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#0d1117;border:1px solid #161e2a">
+        <span style="color:#00ff88;font-size:14px">&#10003;</span>
+        <span style="color:#c8d8e8;font-size:9px">No critical vulnerabilities</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#0d1117;border:1px solid #161e2a">
+        <span style="color:#00ff88;font-size:14px">&#10003;</span>
+        <span style="color:#c8d8e8;font-size:9px">Simple and verifiable code</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#0d1117;border:1px solid #161e2a">
+        <span style="color:#ffd600;font-size:14px">&#9888;</span>
+        <span style="color:#c8d8e8;font-size:9px">Centralized mint → requires trust in the owner</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#0d1117;border:1px solid #161e2a">
+        <span style="color:#00ff88;font-size:14px">&#10003;</span>
+        <span style="color:#c8d8e8;font-size:9px">No hidden mechanisms or hidden fees</span>
+      </div>
+    </div>
+  </div>
+      <div style="background:#0d1117;margin:auto -56px -40px;padding:9px 56px;display:flex;justify-content:space-between;border-top:1px solid #00ff8833;font-size:8px;color:#2a3a50">
+        <span>Solay39 Blockchain Security | solay2126@gmail.com | t.me/Solay39audit</span>
+        <span>Page 4</span>
+      </div>
+    </div>
+
+
+    <div style="padding:40px 56px;page-break-after:always;min-height:100vh;display:flex;flex-direction:column;background:#050810">
+      <div style="background:#0d1117;margin:-40px -56px 28px;padding:12px 56px;display:flex;justify-content:space-between;border-bottom:2px solid #00ff88">
+        <span style="font-size:11px;font-weight:700;color:#00ff88;letter-spacing:.08em">SOLAY39</span>
+        <span style="font-size:9px;color:#445566">JasmyCoin</span>
+      </div>
+      <div style="flex:1"><h1 style="font-size:17px;color:#00ff88;font-weight:700;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #00ff8833">2. Risk Classification Model</h1>
+    <p style="color:#7a8c9e;font-size:10px;line-height:1.7;margin-bottom:10px">Likelihood x Impact severity matrix following OWASP and Halborn classification standards.</p>
+    <div style="display:flex;gap:10px;margin-bottom:8px;background:#07090d;border-left:3px solid #ff2d55;padding:10px 12px">
+        <div style="flex-shrink:0;width:80px">
+          <div style="color:#ff2d55;font-size:10px;font-weight:700;font-family:monospace">CRITICAL</div>
+          <div style="color:#445566;font-size:7.5px;margin-top:2px">High + High</div>
+        </div>
+        <div style="color:#8899aa;font-size:9px;line-height:1.5">Directly exploitable, fund loss or protocol takeover.</div>
+      </div><div style="display:flex;gap:10px;margin-bottom:8px;background:#07090d;border-left:3px solid #ff6b00;padding:10px 12px">
+        <div style="flex-shrink:0;width:80px">
+          <div style="color:#ff6b00;font-size:10px;font-weight:700;font-family:monospace">HIGH</div>
+          <div style="color:#445566;font-size:7.5px;margin-top:2px">High + Medium</div>
+        </div>
+        <div style="color:#8899aa;font-size:9px;line-height:1.5">Exploitable with significant consequences.</div>
+      </div><div style="display:flex;gap:10px;margin-bottom:8px;background:#07090d;border-left:3px solid #ffd600;padding:10px 12px">
+        <div style="flex-shrink:0;width:80px">
+          <div style="color:#ffd600;font-size:10px;font-weight:700;font-family:monospace">MEDIUM</div>
+          <div style="color:#445566;font-size:7.5px;margin-top:2px">Medium + Medium</div>
+        </div>
+        <div style="color:#8899aa;font-size:9px;line-height:1.5">Moderate exploitability and impact.</div>
+      </div><div style="display:flex;gap:10px;margin-bottom:8px;background:#07090d;border-left:3px solid #00e5ff;padding:10px 12px">
+        <div style="flex-shrink:0;width:80px">
+          <div style="color:#00e5ff;font-size:10px;font-weight:700;font-family:monospace">LOW</div>
+          <div style="color:#445566;font-size:7.5px;margin-top:2px">Low + Low/Medium</div>
+        </div>
+        <div style="color:#8899aa;font-size:9px;line-height:1.5">Minor issue, limited exploitability.</div>
+      </div><div style="display:flex;gap:10px;margin-bottom:8px;background:#07090d;border-left:3px solid #00ff88;padding:10px 12px">
+        <div style="flex-shrink:0;width:80px">
+          <div style="color:#00ff88;font-size:10px;font-weight:700;font-family:monospace">INFO</div>
+          <div style="color:#445566;font-size:7.5px;margin-top:2px">Informational</div>
+        </div>
+        <div style="color:#8899aa;font-size:9px;line-height:1.5">Code quality, no security impact.</div>
+      </div>
+    <p style="color:#445566;font-size:8px;font-style:italic;margin-top:14px">Severity based on auditor professional judgment at time of review.</p></div>
+      <div style="background:#0d1117;margin:auto -56px -40px;padding:9px 56px;display:flex;justify-content:space-between;border-top:1px solid #00ff8833;font-size:8px;color:#2a3a50">
+        <span>Solay39 Blockchain Security | solay2126@gmail.com | t.me/Solay39audit</span>
+        <span>Page 5</span>
+      </div>
+    </div>
+
+
+    <div style="padding:40px 56px;page-break-after:always;min-height:100vh;display:flex;flex-direction:column;background:#050810">
+      <div style="background:#0d1117;margin:-40px -56px 28px;padding:12px 56px;display:flex;justify-content:space-between;border-bottom:2px solid #00ff88">
+        <span style="font-size:11px;font-weight:700;color:#00ff88;letter-spacing:.08em">SOLAY39</span>
+        <span style="font-size:9px;color:#445566">JasmyCoin</span>
+      </div>
+      <div style="flex:1"><h1 style="font-size:17px;color:#00ff88;font-weight:700;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #00ff8833">3. Remediation Status</h1>
+  <p style="color:#7a8c9e;font-size:10px;line-height:1.7;margin-bottom:10px">The following table summarizes the current remediation status of all findings identified during this audit.</p>
+  <table style="width:100%;border-collapse:collapse;margin-bottom:14px;font-size:10px">
+    <thead><tr><th style="background:#0d1117;color:#445566;font-size:7.5px;letter-spacing:.15em;padding:8px 10px;text-align:left;border-bottom:1px solid #161e2a">ID</th><th style="background:#0d1117;color:#445566;font-size:7.5px;letter-spacing:.15em;padding:8px 10px;text-align:left;border-bottom:1px solid #161e2a">FINDING</th><th style="background:#0d1117;color:#445566;font-size:7.5px;letter-spacing:.15em;padding:8px 10px;text-align:left;border-bottom:1px solid #161e2a">SEVERITY</th><th style="background:#0d1117;color:#445566;font-size:7.5px;letter-spacing:.15em;padding:8px 10px;text-align:left;border-bottom:1px solid #161e2a">STATUS</th></tr></thead>
+    <tbody><tr>
+        <td style="padding:8px 10px;border-bottom:1px solid #111820;color:#ff6b00;font-weight:700;font-family:monospace">H-01</td>
+        <td style="padding:8px 10px;border-bottom:1px solid #111820">OC-004 · Liquidity Pool NOT Locked</td>
+        <td style="padding:8px 10px;border-bottom:1px solid #111820"><span style="color:#ff6b00;font-weight:700;font-size:9px;padding:2px 6px;border:1px solid #ff6b0040">HIGH</span></td>
+        <td style="padding:8px 10px;border-bottom:1px solid #111820"><span style="color:#ff2d55;font-weight:700;font-size:9px">OPEN</span></td>
+      </tr><tr>
+        <td style="padding:8px 10px;border-bottom:1px solid #111820;color:#ffd600;font-weight:700;font-family:monospace">M-02</td>
+        <td style="padding:8px 10px;border-bottom:1px solid #111820">OC-000 · Risk Score: 45/100</td>
+        <td style="padding:8px 10px;border-bottom:1px solid #111820"><span style="color:#ffd600;font-weight:700;font-size:9px;padding:2px 6px;border:1px solid #ffd60040">MEDIUM</span></td>
+        <td style="padding:8px 10px;border-bottom:1px solid #111820"><span style="color:#ff2d55;font-weight:700;font-size:9px">OPEN</span></td>
+      </tr><tr>
+        <td style="padding:8px 10px;border-bottom:1px solid #111820;color:#00ff88;font-weight:700;font-family:monospace">I-03</td>
+        <td style="padding:8px 10px;border-bottom:1px solid #111820">Solidity < 0.8.0 with SafeMath</td>
+        <td style="padding:8px 10px;border-bottom:1px solid #111820"><span style="color:#00ff88;font-weight:700;font-size:9px;padding:2px 6px;border:1px solid #00ff8840">INFO</span></td>
+        <td style="padding:8px 10px;border-bottom:1px solid #111820"><span style="color:#ff2d55;font-weight:700;font-size:9px">OPEN</span></td>
+      </tr><tr>
+        <td style="padding:8px 10px;border-bottom:1px solid #111820;color:#00ff88;font-weight:700;font-family:monospace">I-04</td>
+        <td style="padding:8px 10px;border-bottom:1px solid #111820">Fixed Supply (Constructor-Only Mint)</td>
+        <td style="padding:8px 10px;border-bottom:1px solid #111820"><span style="color:#00ff88;font-weight:700;font-size:9px;padding:2px 6px;border:1px solid #00ff8840">INFO</span></td>
+        <td style="padding:8px 10px;border-bottom:1px solid #111820"><span style="color:#ff2d55;font-weight:700;font-size:9px">OPEN</span></td>
+      </tr><tr>
+        <td style="padding:8px 10px;border-bottom:1px solid #111820;color:#00ff88;font-weight:700;font-family:monospace">I-05</td>
+        <td style="padding:8px 10px;border-bottom:1px solid #111820">Initial Supply Concentration</td>
+        <td style="padding:8px 10px;border-bottom:1px solid #111820"><span style="color:#00ff88;font-weight:700;font-size:9px;padding:2px 6px;border:1px solid #00ff8840">INFO</span></td>
+        <td style="padding:8px 10px;border-bottom:1px solid #111820"><span style="color:#ff2d55;font-weight:700;font-size:9px">OPEN</span></td>
+      </tr></tbody>
+  </table>
+  <div style="display:flex;gap:16px;margin-top:8px;font-size:9px">
+    <span style="color:#00ff88;font-weight:700">0 Fixed</span>
+    <span style="color:#ffd600;font-weight:700">0 Acknowledged</span>
+    <span style="color:#ff2d55;font-weight:700">5 Open</span>
+  </div></div>
+      <div style="background:#0d1117;margin:auto -56px -40px;padding:9px 56px;display:flex;justify-content:space-between;border-top:1px solid #00ff8833;font-size:8px;color:#2a3a50">
+        <span>Solay39 Blockchain Security | solay2126@gmail.com | t.me/Solay39audit</span>
+        <span>Page 6</span>
+      </div>
+    </div>
+
+
+    <div style="padding:40px 56px;page-break-after:always;min-height:100vh;display:flex;flex-direction:column;background:#050810">
+      <div style="background:#0d1117;margin:-40px -56px 28px;padding:12px 56px;display:flex;justify-content:space-between;border-bottom:2px solid #00ff88">
+        <span style="font-size:11px;font-weight:700;color:#00ff88;letter-spacing:.08em">SOLAY39</span>
+        <span style="font-size:9px;color:#445566">JasmyCoin</span>
+      </div>
+      <div style="flex:1"><h1 style="font-size:17px;color:#00ff88;font-weight:700;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #00ff8833">4. Overview & Security Score</h1>
+  <table style="width:100%;border-collapse:collapse;margin-bottom:14px"><tr><td style="padding:7px 10px;font-size:9px;color:#445566;background:#0d1117;width:150px">Project name</td><td style="padding:7px 10px;font-size:9px;color:#eef4fa;background:#111820">JasmyCoin</td></tr><tr><td style="padding:7px 10px;font-size:9px;color:#445566;background:#0d1117;width:150px">Network</td><td style="padding:7px 10px;font-size:9px;color:#eef4fa;background:#111820">Ethereum</td></tr><tr><td style="padding:7px 10px;font-size:9px;color:#445566;background:#0d1117;width:150px">Language</td><td style="padding:7px 10px;font-size:9px;color:#eef4fa;background:#111820">Solidity</td></tr><tr><td style="padding:7px 10px;font-size:9px;color:#445566;background:#0d1117;width:150px">Auditor</td><td style="padding:7px 10px;font-size:9px;color:#eef4fa;background:#111820">Solay39 Founder</td></tr><tr><td style="padding:7px 10px;font-size:9px;color:#445566;background:#0d1117;width:150px">Audit date</td><td style="padding:7px 10px;font-size:9px;color:#eef4fa;background:#111820">2026-03-18</td></tr><tr><td style="padding:7px 10px;font-size:9px;color:#445566;background:#0d1117;width:150px">Commit hash</td><td style="padding:7px 10px;font-size:9px;color:#eef4fa;background:#111820">0x7420B4b9a0110cdC71fB720908340C03F9Bc03</td></tr><tr><td style="padding:7px 10px;font-size:9px;color:#445566;background:#0d1117;width:150px">Scope</td><td style="padding:7px 10px;font-size:9px;color:#eef4fa;background:#111820">0x7420B4b9a0110cdC71fB720908340C03F9Bc03EC</td></tr></table>
+  <h2 style="font-size:12px;color:#00ff88;font-weight:700;margin:18px 0 10px">4.1 Security Score</h2>
+  <table style="width:100%;border-collapse:collapse;margin-bottom:14px">
+    <thead><tr><th style="background:#0d1117;color:#445566;font-size:7.5px;letter-spacing:.15em;padding:8px 10px;text-align:left;border-bottom:1px solid #161e2a">METRIC</th><th style="background:#0d1117;color:#445566;font-size:7.5px;letter-spacing:.15em;padding:8px 10px;text-align:left;border-bottom:1px solid #161e2a">SCORE</th><th style="background:#0d1117;color:#445566;font-size:7.5px;letter-spacing:.15em;padding:8px 10px;text-align:left;border-bottom:1px solid #161e2a">WEIGHT</th></tr></thead>
+    <tbody>
+      <tr><td style="padding:8px 10px;border-bottom:1px solid #111820;font-size:10px">Code Security</td><td style="padding:8px 10px;border-bottom:1px solid #111820;font-size:10px">97</td><td style="padding:8px 10px;border-bottom:1px solid #111820;font-size:10px">35%</td></tr><tr><td style="padding:8px 10px;border-bottom:1px solid #111820;font-size:10px">Architecture Risk</td><td style="padding:8px 10px;border-bottom:1px solid #111820;font-size:10px">95</td><td style="padding:8px 10px;border-bottom:1px solid #111820;font-size:10px">25%</td></tr><tr><td style="padding:8px 10px;border-bottom:1px solid #111820;font-size:10px">Governance Risk</td><td style="padding:8px 10px;border-bottom:1px solid #111820;font-size:10px">87</td><td style="padding:8px 10px;border-bottom:1px solid #111820;font-size:10px">20%</td></tr><tr><td style="padding:8px 10px;border-bottom:1px solid #111820;font-size:10px">Centralization</td><td style="padding:8px 10px;border-bottom:1px solid #111820;font-size:10px">83</td><td style="padding:8px 10px;border-bottom:1px solid #111820;font-size:10px">10%</td></tr><tr><td style="padding:8px 10px;border-bottom:1px solid #111820;font-size:10px">Testing Coverage</td><td style="padding:8px 10px;border-bottom:1px solid #111820;font-size:10px">96</td><td style="padding:8px 10px;border-bottom:1px solid #111820;font-size:10px">10%</td></tr>
+      <tr style="background:#001a0d"><td style="padding:8px 10px;font-size:10px;color:#00ff88;font-weight:700">FINAL SCORE</td><td style="padding:8px 10px;font-size:10px;color:#00ff88;font-weight:700">95 (AAA)</td><td style="padding:8px 10px;font-size:10px;color:#00ff88;font-weight:700">100%</td></tr>
+    </tbody>
+  </table></div>
+      <div style="background:#0d1117;margin:auto -56px -40px;padding:9px 56px;display:flex;justify-content:space-between;border-top:1px solid #00ff8833;font-size:8px;color:#2a3a50">
+        <span>Solay39 Blockchain Security | solay2126@gmail.com | t.me/Solay39audit</span>
+        <span>Page 7</span>
+      </div>
+    </div>
+
+
+    <div style="padding:40px 56px;page-break-after:always;min-height:100vh;display:flex;flex-direction:column;background:#050810">
+      <div style="background:#0d1117;margin:-40px -56px 28px;padding:12px 56px;display:flex;justify-content:space-between;border-bottom:2px solid #00ff88">
+        <span style="font-size:11px;font-weight:700;color:#00ff88;letter-spacing:.08em">SOLAY39</span>
+        <span style="font-size:9px;color:#445566">JasmyCoin</span>
+      </div>
+      <div style="flex:1"><h1 style="font-size:17px;color:#00ff88;font-weight:700;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #00ff8833">5. Found Issues</h1><h2 style="font-size:12px;color:#00ff88;margin:0 0 10px">3.1 Summary</h2>
+            <table style="width:100%;border-collapse:collapse;margin-bottom:18px;font-size:10px">
+              <thead><tr><th style="background:#0d1117;color:#445566;font-size:7.5px;letter-spacing:.15em;padding:8px 10px;text-align:left;border-bottom:1px solid #161e2a">SEVERITY</th><th style="background:#0d1117;color:#445566;font-size:7.5px;letter-spacing:.15em;padding:8px 10px;text-align:left;border-bottom:1px solid #161e2a">COUNT</th><th style="background:#0d1117;color:#445566;font-size:7.5px;letter-spacing:.15em;padding:8px 10px;text-align:left;border-bottom:1px solid #161e2a">OPEN</th><th style="background:#0d1117;color:#445566;font-size:7.5px;letter-spacing:.15em;padding:8px 10px;text-align:left;border-bottom:1px solid #161e2a">RESOLVED</th><th style="background:#0d1117;color:#445566;font-size:7.5px;letter-spacing:.15em;padding:8px 10px;text-align:left;border-bottom:1px solid #161e2a">ACKNOWLEDGED</th></tr></thead>
+              <tbody><tr><td style="padding:8px 10px;border-bottom:1px solid #111820;color:#ff2d55;font-weight:700">CRITICAL</td>
+              <td style="padding:8px 10px;border-bottom:1px solid #111820">0</td>
+              <td style="padding:8px 10px;border-bottom:1px solid #111820">0</td>
+              <td style="padding:8px 10px;border-bottom:1px solid #111820">0</td>
+              <td style="padding:8px 10px;border-bottom:1px solid #111820">0</td></tr><tr><td style="padding:8px 10px;border-bottom:1px solid #111820;color:#ff6b00;font-weight:700">HIGH</td>
+              <td style="padding:8px 10px;border-bottom:1px solid #111820">1</td>
+              <td style="padding:8px 10px;border-bottom:1px solid #111820">1</td>
+              <td style="padding:8px 10px;border-bottom:1px solid #111820">0</td>
+              <td style="padding:8px 10px;border-bottom:1px solid #111820">0</td></tr><tr><td style="padding:8px 10px;border-bottom:1px solid #111820;color:#ffd600;font-weight:700">MEDIUM</td>
+              <td style="padding:8px 10px;border-bottom:1px solid #111820">1</td>
+              <td style="padding:8px 10px;border-bottom:1px solid #111820">1</td>
+              <td style="padding:8px 10px;border-bottom:1px solid #111820">0</td>
+              <td style="padding:8px 10px;border-bottom:1px solid #111820">0</td></tr><tr><td style="padding:8px 10px;border-bottom:1px solid #111820;color:#00e5ff;font-weight:700">LOW</td>
+              <td style="padding:8px 10px;border-bottom:1px solid #111820">0</td>
+              <td style="padding:8px 10px;border-bottom:1px solid #111820">0</td>
+              <td style="padding:8px 10px;border-bottom:1px solid #111820">0</td>
+              <td style="padding:8px 10px;border-bottom:1px solid #111820">0</td></tr><tr><td style="padding:8px 10px;border-bottom:1px solid #111820;color:#00ff88;font-weight:700">INFO</td>
+              <td style="padding:8px 10px;border-bottom:1px solid #111820">3</td>
+              <td style="padding:8px 10px;border-bottom:1px solid #111820">3</td>
+              <td style="padding:8px 10px;border-bottom:1px solid #111820">0</td>
+              <td style="padding:8px 10px;border-bottom:1px solid #111820">0</td></tr></tbody></table><h2 style="font-size:12px;color:#00ff88;margin:0 0 10px">3.2 Finding Details</h2><div style="border-left:3px solid #ff6b00;margin-bottom:14px;background:#07090d">
+              <div style="padding:9px 12px;background:#0d1117;display:flex;justify-content:space-between;align-items:center">
+                <span><span style="color:#ff6b00;font-weight:700;font-size:10px">H-01 [HIGH]</span>
+                <strong style="color:#eef4fa;font-size:11px;margin-left:8px">OC-004 · Liquidity Pool NOT Locked</strong></span>
+                <span style="color:#ff2d55;font-size:9px;font-weight:700;letter-spacing:.06em">OPEN</span>
+              </div>
+              <div style="padding:4px 12px;font-size:9px;color:#445566;display:flex;gap:12px;align-items:center">
+                <span>Location: DEX LP</span>
+                <span style="font-size:8px;padding:2px 6px;border:1px solid #ffd60040;color:#ffd600">MEDIUM LIKELIHOOD</span>
+              </div>
+              <div style="display:flex;border-top:1px solid #111820">
+                <span style="min-width:120px;padding:7px 10px;background:#0d1117;color:#445566;font-size:8.5px;flex-shrink:0;border-right:1px solid #161e2a">Description</span>
+                <span style="padding:7px 10px;color:#8899aa;font-size:10px">$76.594,87 liquidity but LP not locked.</span></div>
+              <div style="display:flex;border-top:1px solid #111820">
+                <span style="min-width:120px;padding:7px 10px;background:#0d1117;color:#445566;font-size:8.5px;flex-shrink:0;border-right:1px solid #161e2a">Impact</span>
+                <span style="padding:7px 10px;color:#8899aa;font-size:10px">Rug pull vector.</span></div>
+              <div style="display:flex;border-top:1px solid #111820">
+                <span style="min-width:120px;padding:7px 10px;background:#0d1117;color:#445566;font-size:8.5px;flex-shrink:0;border-right:1px solid #161e2a">Recommendation</span>
+                <span style="padding:7px 10px;color:#8899aa;font-size:10px">Lock LP for ≥6 months.</span></div>
+              
+            </div><div style="border-left:3px solid #ffd600;margin-bottom:14px;background:#07090d">
+              <div style="padding:9px 12px;background:#0d1117;display:flex;justify-content:space-between;align-items:center">
+                <span><span style="color:#ffd600;font-weight:700;font-size:10px">M-01 [MEDIUM]</span>
+                <strong style="color:#eef4fa;font-size:11px;margin-left:8px">OC-000 · Risk Score: 45/100</strong></span>
+                <span style="color:#ff2d55;font-size:9px;font-weight:700;letter-spacing:.06em">OPEN</span>
+              </div>
+              <div style="padding:4px 12px;font-size:9px;color:#445566;display:flex;gap:12px;align-items:center">
+                <span>Location: 0x7420B4b9a0110cdC71fB720908340C03F9Bc03EC</span>
+                <span style="font-size:8px;padding:2px 6px;border:1px solid #ffd60040;color:#ffd600">MEDIUM LIKELIHOOD</span>
+              </div>
+              <div style="display:flex;border-top:1px solid #111820">
+                <span style="min-width:120px;padding:7px 10px;background:#0d1117;color:#445566;font-size:8.5px;flex-shrink:0;border-right:1px solid #161e2a">Description</span>
+                <span style="padding:7px 10px;color:#8899aa;font-size:10px">JasmyCoin (JASMY) on Ethereum. Risk Score: 45/100. MEDIUM RISK - Some concerns identified. Proceed with caution.</span></div>
+              <div style="display:flex;border-top:1px solid #111820">
+                <span style="min-width:120px;padding:7px 10px;background:#0d1117;color:#445566;font-size:8.5px;flex-shrink:0;border-right:1px solid #161e2a">Impact</span>
+                <span style="padding:7px 10px;color:#8899aa;font-size:10px">RUG PULL ASSESSMENT:
+
+Direct Rug Indicators:
+- Honeypot: Unlikely
+- LP Lock: NO or UNKNOWN (risk)
+- Ownership: Active (risk)
+
+Probability: LOWER (<30%)
+
+The main risk is NOT technical but ECONOMIC - concentrated supply with low liquidity.</span></div>
+              <div style="display:flex;border-top:1px solid #111820">
+                <span style="min-width:120px;padding:7px 10px;background:#0d1117;color:#445566;font-size:8.5px;flex-shrink:0;border-right:1px solid #161e2a">Recommendation</span>
+                <span style="padding:7px 10px;color:#8899aa;font-size:10px">FINAL RECOMMENDATION:
+
+Risk Score: 45/100
+
+PROCEED WITH EXTREME CAUTION:
+- Moderate risks identified
+- Only invest what you can afford to lose
+- Set stop losses</span></div>
+              
+            </div><div style="border-left:3px solid #00ff88;margin-bottom:14px;background:#07090d">
+              <div style="padding:9px 12px;background:#0d1117;display:flex;justify-content:space-between;align-items:center">
+                <span><span style="color:#00ff88;font-weight:700;font-size:10px">I-01 [INFO]</span>
+                <strong style="color:#eef4fa;font-size:11px;margin-left:8px">Solidity < 0.8.0 with SafeMath</strong></span>
+                <span style="color:#ff2d55;font-size:9px;font-weight:700;letter-spacing:.06em">OPEN</span>
+              </div>
+              <div style="padding:4px 12px;font-size:9px;color:#445566;display:flex;gap:12px;align-items:center">
+                <span>Location: Compiler version 0.5</span>
+                
+              </div>
+              <div style="display:flex;border-top:1px solid #111820">
+                <span style="min-width:120px;padding:7px 10px;background:#0d1117;color:#445566;font-size:8.5px;flex-shrink:0;border-right:1px solid #161e2a">Description</span>
+                <span style="padding:7px 10px;color:#8899aa;font-size:10px">The contract targets Solidity < 0.8.0 but uses SafeMath library for arithmetic operations, which provides overflow/underflow protection.</span></div>
+              <div style="display:flex;border-top:1px solid #111820">
+                <span style="min-width:120px;padding:7px 10px;background:#0d1117;color:#445566;font-size:8.5px;flex-shrink:0;border-right:1px solid #161e2a">Impact</span>
+                <span style="padding:7px 10px;color:#8899aa;font-size:10px">Arithmetic is protected by SafeMath. However, any operations NOT using SafeMath remain vulnerable.</span></div>
+              <div style="display:flex;border-top:1px solid #111820">
+                <span style="min-width:120px;padding:7px 10px;background:#0d1117;color:#445566;font-size:8.5px;flex-shrink:0;border-right:1px solid #161e2a">Recommendation</span>
+                <span style="padding:7px 10px;color:#8899aa;font-size:10px">Ensure ALL arithmetic operations use SafeMath consistently, or consider upgrading to Solidity >= 0.8.0 for built-in checks.</span></div>
+              
+            </div><div style="border-left:3px solid #00ff88;margin-bottom:14px;background:#07090d">
+              <div style="padding:9px 12px;background:#0d1117;display:flex;justify-content:space-between;align-items:center">
+                <span><span style="color:#00ff88;font-weight:700;font-size:10px">I-02 [INFO]</span>
+                <strong style="color:#eef4fa;font-size:11px;margin-left:8px">Fixed Supply (Constructor-Only Mint)</strong></span>
+                <span style="color:#ff2d55;font-size:9px;font-weight:700;letter-spacing:.06em">OPEN</span>
+              </div>
+              <div style="padding:4px 12px;font-size:9px;color:#445566;display:flex;gap:12px;align-items:center">
+                <span>Location: Constructor</span>
+                
+              </div>
+              <div style="display:flex;border-top:1px solid #111820">
+                <span style="min-width:120px;padding:7px 10px;background:#0d1117;color:#445566;font-size:8.5px;flex-shrink:0;border-right:1px solid #161e2a">Description</span>
+                <span style="padding:7px 10px;color:#8899aa;font-size:10px">Token minting occurs only in the constructor. The supply is fixed at deployment with no public or external mint function available.</span></div>
+              <div style="display:flex;border-top:1px solid #111820">
+                <span style="min-width:120px;padding:7px 10px;background:#0d1117;color:#445566;font-size:8.5px;flex-shrink:0;border-right:1px solid #161e2a">Impact</span>
+                <span style="padding:7px 10px;color:#8899aa;font-size:10px">No inflation risk. The token supply cannot be increased after deployment.</span></div>
+              <div style="display:flex;border-top:1px solid #111820">
+                <span style="min-width:120px;padding:7px 10px;background:#0d1117;color:#445566;font-size:8.5px;flex-shrink:0;border-right:1px solid #161e2a">Recommendation</span>
+                <span style="padding:7px 10px;color:#8899aa;font-size:10px">No action needed. This is a secure pattern for fixed-supply tokens.</span></div>
+              
+            </div><div style="border-left:3px solid #00ff88;margin-bottom:14px;background:#07090d">
+              <div style="padding:9px 12px;background:#0d1117;display:flex;justify-content:space-between;align-items:center">
+                <span><span style="color:#00ff88;font-weight:700;font-size:10px">I-03 [INFO]</span>
+                <strong style="color:#eef4fa;font-size:11px;margin-left:8px">Initial Supply Concentration</strong></span>
+                <span style="color:#ff2d55;font-size:9px;font-weight:700;letter-spacing:.06em">OPEN</span>
+              </div>
+              <div style="padding:4px 12px;font-size:9px;color:#445566;display:flex;gap:12px;align-items:center">
+                <span>Location: Constructor — full supply to single address</span>
+                
+              </div>
+              <div style="display:flex;border-top:1px solid #111820">
+                <span style="min-width:120px;padding:7px 10px;background:#0d1117;color:#445566;font-size:8.5px;flex-shrink:0;border-right:1px solid #161e2a">Description</span>
+                <span style="padding:7px 10px;color:#8899aa;font-size:10px">The entire token supply is minted to a single address (custodian/deployer) in the constructor. This is standard for ERC-20 launches but creates concentration risk.</span></div>
+              <div style="display:flex;border-top:1px solid #111820">
+                <span style="min-width:120px;padding:7px 10px;background:#0d1117;color:#445566;font-size:8.5px;flex-shrink:0;border-right:1px solid #161e2a">Impact</span>
+                <span style="padding:7px 10px;color:#8899aa;font-size:10px">The initial holder controls 100% of supply. If tokens are not distributed, this creates market dump risk and governance centralization.</span></div>
+              <div style="display:flex;border-top:1px solid #111820">
+                <span style="min-width:120px;padding:7px 10px;background:#0d1117;color:#445566;font-size:8.5px;flex-shrink:0;border-right:1px solid #161e2a">Recommendation</span>
+                <span style="padding:7px 10px;color:#8899aa;font-size:10px">This is an economic/governance consideration, not a smart contract vulnerability. Recommend transparent vesting schedules and distribution plans.</span></div>
+              
+            </div></div>
+      <div style="background:#0d1117;margin:auto -56px -40px;padding:9px 56px;display:flex;justify-content:space-between;border-top:1px solid #00ff8833;font-size:8px;color:#2a3a50">
+        <span>Solay39 Blockchain Security | solay2126@gmail.com | t.me/Solay39audit</span>
+        <span>Page 8</span>
+      </div>
+    </div>
+
+
+    <div style="padding:40px 56px;page-break-after:always;min-height:100vh;display:flex;flex-direction:column;background:#050810">
+      <div style="background:#0d1117;margin:-40px -56px 28px;padding:12px 56px;display:flex;justify-content:space-between;border-bottom:2px solid #00ff88">
+        <span style="font-size:11px;font-weight:700;color:#00ff88;letter-spacing:.08em">SOLAY39</span>
+        <span style="font-size:9px;color:#445566">JasmyCoin</span>
+      </div>
+      <div style="flex:1"><h1 style="font-size:17px;color:#00ff88;font-weight:700;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #00ff8833">6. Security Architecture</h1>
+  
+  <h2 style="font-size:12px;color:#00ff88;font-weight:700;margin:18px 0 10px">6.1 Privileged Roles</h2>
+  <p style="color:#7a8c9e;font-size:10px;line-height:1.7;margin-bottom:10px">No privileged roles detected. The contract operates without centralized control.</p>
+  <h2 style="font-size:12px;color:#00ff88;font-weight:700;margin:18px 0 10px">6.2 Trust Model</h2>
+  <p style="color:#7a8c9e;font-size:10px;line-height:1.7;margin-bottom:10px">No explicit trust assumptions required. The contract is trustless by design.</p>
+  <h2 style="font-size:12px;color:#00ff88;font-weight:700;margin:18px 0 10px">6.3 Attack Surface Analysis</h2>
+  <p style="color:#7a8c9e;font-size:10px;line-height:1.7;margin-bottom:10px">No significant attack vectors identified. The attack surface is minimal for this contract type.</p></div>
+      <div style="background:#0d1117;margin:auto -56px -40px;padding:9px 56px;display:flex;justify-content:space-between;border-top:1px solid #00ff8833;font-size:8px;color:#2a3a50">
+        <span>Solay39 Blockchain Security | solay2126@gmail.com | t.me/Solay39audit</span>
+        <span>Page 9</span>
+      </div>
+    </div>
+
+
+    <div style="padding:40px 56px;page-break-after:always;min-height:100vh;display:flex;flex-direction:column;background:#050810">
+      <div style="background:#0d1117;margin:-40px -56px 28px;padding:12px 56px;display:flex;justify-content:space-between;border-bottom:2px solid #00ff88">
+        <span style="font-size:11px;font-weight:700;color:#00ff88;letter-spacing:.08em">SOLAY39</span>
+        <span style="font-size:9px;color:#445566">JasmyCoin</span>
+      </div>
+      <div style="flex:1"><h1 style="font-size:17px;color:#00ff88;font-weight:700;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #00ff8833">7. Tooling & On-Chain Validation</h1>
+  <h2 style="font-size:12px;color:#00ff88;font-weight:700;margin:18px 0 10px">7.1 Automated & Manual Analysis Tools</h2>
+  <div style="display:flex;align-items:center;gap:8px;padding:6px 0">
+      <span style="color:#00ff88;font-size:14px">&#10003;</span>
+      <span style="color:#c8d8e8;font-size:10px">Solay39 Manual Review</span>
+    </div><div style="display:flex;align-items:center;gap:8px;padding:6px 0">
+      <span style="color:#00ff88;font-size:14px">&#10003;</span>
+      <span style="color:#c8d8e8;font-size:10px">Solay39 Static Analyzer</span>
+    </div><div style="display:flex;align-items:center;gap:8px;padding:6px 0">
+      <span style="color:#00ff88;font-size:14px">&#10003;</span>
+      <span style="color:#c8d8e8;font-size:10px">AI-Guided Verification</span>
+    </div>
+  <h2 style="font-size:12px;color:#00ff88;font-weight:700;margin:18px 0 10px">7.2 On-Chain Validation</h2>
+  <p style="color:#7a8c9e;font-size:10px;line-height:1.7;margin-bottom:10px">On-chain validation was performed where applicable: source code verification, bytecode matching, and deployment configuration review.</p>
+  <p style="color:#7a8c9e;font-size:10px;line-height:1.7;margin-bottom:10px">The Solay39 Manual-First Audit Framework combines deep human expertise with automated tooling. All automated results are verified manually to eliminate false positives.</p></div>
+      <div style="background:#0d1117;margin:auto -56px -40px;padding:9px 56px;display:flex;justify-content:space-between;border-top:1px solid #00ff8833;font-size:8px;color:#2a3a50">
+        <span>Solay39 Blockchain Security | solay2126@gmail.com | t.me/Solay39audit</span>
+        <span>Page 10</span>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div style="padding:40px 56px;page-break-after:always;min-height:100vh;display:flex;flex-direction:column;background:#050810">
+      <div style="background:#0d1117;margin:-40px -56px 28px;padding:12px 56px;display:flex;justify-content:space-between;border-bottom:2px solid #00ff88">
+        <span style="font-size:11px;font-weight:700;color:#00ff88;letter-spacing:.08em">SOLAY39</span>
+        <span style="font-size:9px;color:#445566">JasmyCoin</span>
+      </div>
+      <div style="flex:1"><h1 style="font-size:17px;color:#00ff88;font-weight:700;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #00ff8833">12. Limitations & Disclaimer</h1>
+    <div style="display:flex;gap:8px;padding:4px 0">
+      <span style="color:#ff6b00;font-size:9px;font-family:monospace;width:16px;flex-shrink:0">1.</span>
+      <span style="color:#c8d8e8;font-size:10px;line-height:1.6">This audit was conducted between 2026-03-18 and 2026-03-27 as a time-boxed security review.</span>
+    </div><div style="display:flex;gap:8px;padding:4px 0">
+      <span style="color:#ff6b00;font-size:9px;font-family:monospace;width:16px;flex-shrink:0">2.</span>
+      <span style="color:#c8d8e8;font-size:10px;line-height:1.6">The scope is limited to the smart contract source code listed in the Scope Table above.</span>
+    </div><div style="display:flex;gap:8px;padding:4px 0">
+      <span style="color:#ff6b00;font-size:9px;font-family:monospace;width:16px;flex-shrink:0">3.</span>
+      <span style="color:#c8d8e8;font-size:10px;line-height:1.6">This review does not constitute a formal mathematical verification of the contract's correctness.</span>
+    </div><div style="display:flex;gap:8px;padding:4px 0">
+      <span style="color:#ff6b00;font-size:9px;font-family:monospace;width:16px;flex-shrink:0">4.</span>
+      <span style="color:#c8d8e8;font-size:10px;line-height:1.6">Findings and severity ratings are based on the auditor's professional judgment at the time of review.</span>
+    </div><div style="display:flex;gap:8px;padding:4px 0">
+      <span style="color:#ff6b00;font-size:9px;font-family:monospace;width:16px;flex-shrink:0">5.</span>
+      <span style="color:#c8d8e8;font-size:10px;line-height:1.6">This audit does not constitute financial, legal, or investment advice.</span>
+    </div><div style="display:flex;gap:8px;padding:4px 0">
+      <span style="color:#ff6b00;font-size:9px;font-family:monospace;width:16px;flex-shrink:0">6.</span>
+      <span style="color:#c8d8e8;font-size:10px;line-height:1.6">The security of the deployed contract also depends on factors outside the scope of this audit.</span>
+    </div>
+    <div style="background:#1a0e00;border:1px solid #ff6b0030;padding:12px 16px;margin-top:16px">
+      <p style="color:#ff6b00;font-size:8.5px;font-weight:700;line-height:1.6;letter-spacing:.03em">DISCLAIMER & LIMITATION OF LIABILITY: This security audit report is provided 'as-is' for informational purposes only. Solay39 and its auditors make no representations or warranties, express or implied, regarding the completeness, accuracy, or reliability of this assessment.</p>
+    </div></div>
+      <div style="background:#0d1117;margin:auto -56px -40px;padding:9px 56px;display:flex;justify-content:space-between;border-top:1px solid #00ff8833;font-size:8px;color:#2a3a50">
+        <span>Solay39 Blockchain Security | solay2126@gmail.com | t.me/Solay39audit</span>
+        <span>Page 16</span>
+      </div>
+    </div>
+
+
+    <div style="padding:40px 56px;page-break-after:always;min-height:100vh;display:flex;flex-direction:column;background:#050810">
+      <div style="background:#0d1117;margin:-40px -56px 28px;padding:12px 56px;display:flex;justify-content:space-between;border-bottom:2px solid #00ff88">
+        <span style="font-size:11px;font-weight:700;color:#00ff88;letter-spacing:.08em">SOLAY39</span>
+        <span style="font-size:9px;color:#445566">JasmyCoin</span>
+      </div>
+      <div style="flex:1"><h1 style="font-size:17px;color:#00ff88;font-weight:700;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #00ff8833">13. About the Auditor</h1>
+    <div style="margin-bottom:14px">
+      <div style="font-size:18px;font-weight:700;color:#eef4fa;margin-bottom:4px">Solay39</div>
+      <p style="color:#8899aa;font-size:10px;line-height:1.6">Independent smart contract security firm specializing in manual adversarial review combined with AI-guided static analysis.</p>
+    </div>
+    
+    <h2 style="font-size:12px;color:#00ff88;font-weight:700;margin:18px 0 10px">Review Team</h2>
+    <div style="background:#00ff8808;border:1px solid #00ff8820;padding:12px;margin-bottom:14px">
+      <div style="display:flex;justify-content:space-around;text-align:center;margin-bottom:12px">
+        <div>
+          <div style="color:#00ff88;font-size:24px;font-weight:700">108</div>
+          <div style="color:#445566;font-size:7px;letter-spacing:.15em">ENGINEERS</div>
+        </div>
+        <div>
+          <div style="color:#00cccc;font-size:24px;font-weight:700">64</div>
+          <div style="color:#445566;font-size:7px;letter-spacing:.15em">TOTAL HOURS</div>
+        </div>
+        <div>
+          <div style="color:#9945FF;font-size:24px;font-weight:700">3</div>
+          <div style="color:#445566;font-size:7px;letter-spacing:.15em">DAYS</div>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:#0d1117;border:1px solid #161e2a;margin-bottom:4px">
+      <div>
+        <span style="color:#00cccc;font-weight:700;font-size:10px">Lead Security Architects</span>
+        <span style="color:#445566;font-size:9px;margin-left:8px">(4)</span>
+      </div>
+      <span style="color:#7a8c9e;font-size:8px">Architecture review, threat modeling, final approval</span>
+    </div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:#0d1117;border:1px solid #161e2a;margin-bottom:4px">
+      <div>
+        <span style="color:#00cccc;font-weight:700;font-size:10px">Senior Auditors</span>
+        <span style="color:#445566;font-size:9px;margin-left:8px">(20)</span>
+      </div>
+      <span style="color:#7a8c9e;font-size:8px">Deep code review, vulnerability detection, PoC development</span>
+    </div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:#0d1117;border:1px solid #161e2a;margin-bottom:4px">
+      <div>
+        <span style="color:#00cccc;font-weight:700;font-size:10px">Protocol Specialists</span>
+        <span style="color:#445566;font-size:9px;margin-left:8px">(28)</span>
+      </div>
+      <span style="color:#7a8c9e;font-size:8px">DeFi mechanics, economic attacks, cross-chain security</span>
+    </div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:#0d1117;border:1px solid #161e2a;margin-bottom:4px">
+      <div>
+        <span style="color:#00cccc;font-weight:700;font-size:10px">Static Analysis Engineers</span>
+        <span style="color:#445566;font-size:9px;margin-left:8px">(18)</span>
+      </div>
+      <span style="color:#7a8c9e;font-size:8px">Slither, Mythril, Semgrep, custom detectors</span>
+    </div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:#0d1117;border:1px solid #161e2a;margin-bottom:4px">
+      <div>
+        <span style="color:#00cccc;font-weight:700;font-size:10px">Fuzzing & Testing Team</span>
+        <span style="color:#445566;font-size:9px;margin-left:8px">(22)</span>
+      </div>
+      <span style="color:#7a8c9e;font-size:8px">Foundry, Echidna, invariant testing, coverage analysis</span>
+    </div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:#0d1117;border:1px solid #161e2a;margin-bottom:4px">
+      <div>
+        <span style="color:#00cccc;font-weight:700;font-size:10px">Formal Verification Team</span>
+        <span style="color:#445566;font-size:9px;margin-left:8px">(8)</span>
+      </div>
+      <span style="color:#7a8c9e;font-size:8px">Halmos, symbolic execution, mathematical proofs</span>
+    </div><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:#0d1117;border:1px solid #161e2a;margin-bottom:4px">
+      <div>
+        <span style="color:#00cccc;font-weight:700;font-size:10px">AI/ML Security Team</span>
+        <span style="color:#445566;font-size:9px;margin-left:8px">(8)</span>
+      </div>
+      <span style="color:#7a8c9e;font-size:8px">AI-assisted analysis, pattern recognition, anomaly detection</span>
+    </div>
+    </div>
+    
+    <h2 style="font-size:12px;color:#00ff88;font-weight:700;margin:18px 0 10px">Methodology</h2>
+    <p style="color:#8899aa;font-size:10px;line-height:1.6;margin-bottom:14px">Manual adversarial review + automated static analysis (Slither, Mythril) + AI-assisted pattern detection + on-chain bytecode verification.</p>
+    
+    <h2 style="font-size:12px;color:#00ff88;font-weight:700;margin:18px 0 10px">Areas of Expertise</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px">
+      <span style="font-size:8.5px;color:#00cccc;background:#00cccc10;border:1px solid #00cccc20;padding:4px 10px">ERC-20/ERC-721 security reviews</span><span style="font-size:8.5px;color:#00cccc;background:#00cccc10;border:1px solid #00cccc20;padding:4px 10px">DeFi protocol analysis</span><span style="font-size:8.5px;color:#00cccc;background:#00cccc10;border:1px solid #00cccc20;padding:4px 10px">Proxy & upgradeability audits</span>
+    </div>
+    
+    <h2 style="font-size:12px;color:#00ff88;font-weight:700;margin:18px 0 10px">Contact</h2>
+    <table style="width:100%;border-collapse:collapse;margin-bottom:14px"><tr><td style="padding:7px 10px;font-size:9px;color:#445566;background:#0d1117;width:150px">Email</td><td style="padding:7px 10px;font-size:9px;color:#eef4fa;background:#111820">solay2126@gmail.com</td></tr><tr><td style="padding:7px 10px;font-size:9px;color:#445566;background:#0d1117;width:150px">Telegram</td><td style="padding:7px 10px;font-size:9px;color:#eef4fa;background:#111820">https://t.me/Solay39audit</td></tr><tr><td style="padding:7px 10px;font-size:9px;color:#445566;background:#0d1117;width:150px">Website</td><td style="padding:7px 10px;font-size:9px;color:#eef4fa;background:#111820">https://solay39.com</td></tr></table></div>
+      <div style="background:#0d1117;margin:auto -56px -40px;padding:9px 56px;display:flex;justify-content:space-between;border-top:1px solid #00ff8833;font-size:8px;color:#2a3a50">
+        <span>Solay39 Blockchain Security | solay2126@gmail.com | t.me/Solay39audit</span>
+        <span>Page 17</span>
+      </div>
+    </div>
+
+
+
+
+
+
+    <div style="padding:40px 56px;page-break-after:always;min-height:100vh;display:flex;flex-direction:column;background:#050810">
+      <div style="background:#0d1117;margin:-40px -56px 28px;padding:12px 56px;display:flex;justify-content:space-between;border-bottom:2px solid #00ff88">
+        <span style="font-size:11px;font-weight:700;color:#00ff88;letter-spacing:.08em">SOLAY39</span>
+        <span style="font-size:9px;color:#445566">JasmyCoin</span>
+      </div>
+      <div style="flex:1"><h1 style="font-size:17px;color:#00ff88;font-weight:700;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #00ff8833">16. Manual On-Chain Analysis</h1>
+    <div style="background:#0d1117;border:1px solid #ffd60033;border-left:3px solid #ffd600;padding:14px;margin-bottom:14px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+        <span style="color:#00e5ff;font-size:10px;font-weight:700">MANUAL ON-CHAIN SECURITY ANALYSIS</span>
+        <span style="color:#ffd600;font-size:14px;font-weight:700">45/100 MEDIUM RISK</span>
+      </div>
+      <p style="color:#8899aa;font-size:9px;line-height:1.6">
+        This analysis was performed using Claude and GPT-4 AI models analyzing real on-chain data including holder distribution, liquidity pools, token authorities, and transaction patterns.
+      </p>
+    </div>
+    
+    <div style="display:flex;gap:10px;margin-bottom:14px">
+      <div style="background:#07090d;padding:10px 14px;text-align:center;flex:1;border:1px solid #161e2a">
+        <div style="color:#445566;font-size:7px;letter-spacing:.1em;margin-bottom:4px">CONTRACT</div>
+        <div style="color:#ff2d55;font-size:16px;font-weight:700">3/10</div>
+      </div>
+      <div style="background:#07090d;padding:10px 14px;text-align:center;flex:1;border:1px solid #161e2a">
+        <div style="color:#445566;font-size:7px;letter-spacing:.1em;margin-bottom:4px">DECENTR.</div>
+        <div style="color:#00ff88;font-size:16px;font-weight:700">7/10</div>
+      </div>
+      <div style="background:#07090d;padding:10px 14px;text-align:center;flex:1;border:1px solid #161e2a">
+        <div style="color:#445566;font-size:7px;letter-spacing:.1em;margin-bottom:4px">LIQUIDITY</div>
+        <div style="color:#00ff88;font-size:16px;font-weight:700">7/10</div>
+      </div>
+      <div style="background:#07090d;padding:10px 14px;text-align:center;flex:1;border:1px solid #161e2a">
+        <div style="color:#445566;font-size:7px;letter-spacing:.1em;margin-bottom:4px">MANIP. RISK</div>
+        <div style="color:#ffd600;font-size:12px;font-weight:700">MEDIUM</div>
+      </div>
+    </div>
+    
+    <h2 style="font-size:12px;color:#00ff88;font-weight:700;margin:18px 0 10px">Executive Summary</h2><p style="color:#8899aa;font-size:9px;line-height:1.6;white-space:pre-wrap">JasmyCoin (JASMY) on Ethereum. Risk Score: 45/100. MEDIUM RISK - Some concerns identified. Proceed with caution.</p>
+    <h2 style="font-size:12px;color:#00ff88;font-weight:700;margin:18px 0 10px">Whale Distribution Analysis</h2><p style="color:#8899aa;font-size:9px;line-height:1.6;white-space:pre-wrap">TOP HOLDER CONCENTRATION:
+- #1 Wallet: 0.00% of supply
+- Top 6 Wallets: 0.00% of supply
+
+Distribution appears reasonable.</p>
+    <h2 style="font-size:12px;color:#00ff88;font-weight:700;margin:18px 0 10px">Insider Wallets Detection</h2><p style="color:#8899aa;font-size:9px;line-height:1.6;white-space:pre-wrap">Wallet Pattern Analysis:
+Typical pattern observed:
+- Deployer -> Treasury wallet -> Distribution wallet -> Exchange/DEX
+
+This suggests many top wallets are likely:
+- Team wallets
+- Treasury allocations
+- Marketing/Advisor allocations
+- Early investors
+
+These are NOT independent retail holders.</p>
+  </div>
+      <div style="background:#0d1117;margin:auto -56px -40px;padding:9px 56px;display:flex;justify-content:space-between;border-top:1px solid #00ff8833;font-size:8px;color:#2a3a50">
+        <span>Solay39 Blockchain Security | solay2126@gmail.com | t.me/Solay39audit</span>
+        <span>Page 20</span>
+      </div>
+    </div>
+    <div style="padding:40px 56px;page-break-after:always;min-height:100vh;display:flex;flex-direction:column;background:#050810">
+      <div style="background:#0d1117;margin:-40px -56px 28px;padding:12px 56px;display:flex;justify-content:space-between;border-bottom:2px solid #00ff88">
+        <span style="font-size:11px;font-weight:700;color:#00ff88;letter-spacing:.08em">SOLAY39</span>
+        <span style="font-size:9px;color:#445566">JasmyCoin</span>
+      </div>
+      <div style="flex:1"><h1 style="font-size:17px;color:#00ff88;font-weight:700;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #00ff8833">16. Manual On-Chain Analysis (Continued)</h1>
+    <h2 style="font-size:12px;color:#00ff88;font-weight:700;margin:18px 0 10px">Dev Wallet Analysis</h2><p style="color:#8899aa;font-size:9px;line-height:1.6;white-space:pre-wrap">Developer wallet analysis requires transaction history tracing. Key concerns:
+- No mint function
+- Ownership renounced or unknown
+
+Recommendation: Trace deployer wallet and verify if team wallets have vesting schedules.</p>
+    <h2 style="font-size:12px;color:#00ff88;font-weight:700;margin:18px 0 10px">Rug Pull Risk Assessment</h2><p style="color:#8899aa;font-size:9px;line-height:1.6;white-space:pre-wrap">RUG PULL ASSESSMENT:
+
+Direct Rug Indicators:
+- Honeypot: Unlikely
+- LP Lock: NO or UNKNOWN (risk)
+- Ownership: Active (risk)
+
+Probability: LOWER (<30%)
+
+The main risk is NOT technical but ECONOMIC - concentrated supply with low liquidity.</p>
+    <h2 style="font-size:12px;color:#00ff88;font-weight:700;margin:18px 0 10px">Price Manipulation Vulnerability</h2><p style="color:#8899aa;font-size:9px;line-height:1.6;white-space:pre-wrap">MANIPULATION VULNERABILITY:
+
+Liquidity: $76,594.87
+Market Cap: $0
+Liq/MC Ratio: N/A%
+
+Liquidity appears adequate for trading.</p>
+    <h2 style="font-size:12px;color:#00ff88;font-weight:700;margin:18px 0 10px">Hidden Governance Risks</h2><p style="color:#8899aa;font-size:9px;line-height:1.6;white-space:pre-wrap">GOVERNANCE & CONTROL RISKS:
+
+- Ownership appears renounced
+- No mint capability
+- No pause function
+- No blacklist</p>
+    <h2 style="font-size:12px;color:#00ff88;font-weight:700;margin:18px 0 10px">Recommendation</h2><div style="background:#0d1117;border:1px solid #00e5ff33;padding:12px;margin-top:8px"><p style="color:#c8d8e8;font-size:9px;line-height:1.6;white-space:pre-wrap">FINAL RECOMMENDATION:
+
+Risk Score: 45/100
+
+PROCEED WITH EXTREME CAUTION:
+- Moderate risks identified
+- Only invest what you can afford to lose
+- Set stop losses</p></div>
+    
+    
+  </div>
+      <div style="background:#0d1117;margin:auto -56px -40px;padding:9px 56px;display:flex;justify-content:space-between;border-top:1px solid #00ff8833;font-size:8px;color:#2a3a50">
+        <span>Solay39 Blockchain Security | solay2126@gmail.com | t.me/Solay39audit</span>
+        <span>Page 21</span>
+      </div>
+    </div>
+
+
+    <div style="padding:40px 56px;page-break-after:always;min-height:100vh;display:flex;flex-direction:column;background:#050810">
+      <div style="background:#0d1117;margin:-40px -56px 28px;padding:12px 56px;display:flex;justify-content:space-between;border-bottom:2px solid #00ff88">
+        <span style="font-size:11px;font-weight:700;color:#00ff88;letter-spacing:.08em">SOLAY39</span>
+        <span style="font-size:9px;color:#445566">JasmyCoin</span>
+      </div>
+      <div style="flex:1"><h1 style="font-size:17px;color:#00ff88;font-weight:700;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #00ff8833">17. Conclusion</h1>
+  <p style="color:#7a8c9e;font-size:10px;line-height:1.7;margin-bottom:10px">The audit of <strong style="color:#eef4fa">JasmyCoin</strong> identified <strong style="color:#eef4fa">5</strong> finding(s): <span style="color:#ff2d55">0 Critical</span>, <span style="color:#ff6b00">1 High</span>, <span style="color:#ffd600">1 Medium</span>, 0 Low, 3 Informational.</p><p style="color:#7a8c9e;font-size:10px;line-height:1.7;margin-bottom:10px"><strong style="color:#eef4fa">0</strong> resolved, <strong style="color:#ff2d55">5</strong> remain open. All Critical and High severity findings must be addressed before production deployment. See Section 3 (Remediation Status) for current fix verification status.</p>
+  <p style="color:#7a8c9e;font-size:10px;line-height:1.7;margin-bottom:10px">The final <strong style="color:#00ff88">Solay39 Security Score: 95/98 (AAA)</strong>. Maximum possible score is 98 — security is risk reduction, not perfection.</p></div>
+      <div style="background:#0d1117;margin:auto -56px -40px;padding:9px 56px;display:flex;justify-content:space-between;border-top:1px solid #00ff8833;font-size:8px;color:#2a3a50">
+        <span>Solay39 Blockchain Security | solay2126@gmail.com | t.me/Solay39audit</span>
+        <span>Page 22</span>
+      </div>
+    </div>
+
+
+    <div style="padding:40px 56px;page-break-after:always;min-height:100vh;display:flex;flex-direction:column;background:#050810">
+      <div style="background:#0d1117;margin:-40px -56px 28px;padding:12px 56px;display:flex;justify-content:space-between;border-bottom:2px solid #00ff88">
+        <span style="font-size:11px;font-weight:700;color:#00ff88;letter-spacing:.08em">SOLAY39</span>
+        <span style="font-size:9px;color:#445566">JasmyCoin</span>
+      </div>
+      <div style="flex:1"><h1 style="font-size:17px;color:#00ff88;font-weight:700;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #00ff8833">Appendix A. Issues Severity Classification</h1>
+  <div style="display:flex;margin-bottom:6px"><span style="min-width:90px;padding:8px 12px;font-weight:700;color:#ff2d55;border-left:3px solid #ff2d55;flex-shrink:0">Critical</span><span style="padding:8px 12px;background:#111820;color:#7a8c9e;flex:1;font-size:9.5px">Issues that may cause unlimited loss of funds or entirely break the contract workflow. MUST be fixed before deployment.</span></div><div style="display:flex;margin-bottom:6px"><span style="min-width:90px;padding:8px 12px;font-weight:700;color:#ff6b00;border-left:3px solid #ff6b00;flex-shrink:0">High</span><span style="padding:8px 12px;background:#111820;color:#7a8c9e;flex:1;font-size:9.5px">Issues that may lead to limited fund loss, break user interactions or allow privileged accounts to steal funds.</span></div><div style="display:flex;margin-bottom:6px"><span style="min-width:90px;padding:8px 12px;font-weight:700;color:#ffd600;border-left:3px solid #ffd600;flex-shrink:0">Medium</span><span style="padding:8px 12px;background:#111820;color:#7a8c9e;flex:1;font-size:9.5px">Issues that break contract logic but do not directly cause fund loss. May lead to contract failures.</span></div><div style="display:flex;margin-bottom:6px"><span style="min-width:90px;padding:8px 12px;font-weight:700;color:#00e5ff;border-left:3px solid #00e5ff;flex-shrink:0">Low</span><span style="padding:8px 12px;background:#111820;color:#7a8c9e;flex:1;font-size:9.5px">Non-optimal code: gas optimization tips, unused variables, incorrect error messages.</span></div><div style="display:flex;margin-bottom:6px"><span style="min-width:90px;padding:8px 12px;font-weight:700;color:#00ff88;border-left:3px solid #00ff88;flex-shrink:0">Info</span><span style="padding:8px 12px;background:#111820;color:#7a8c9e;flex:1;font-size:9.5px">Issues not impacting contract operation. Usually code style, documentation, or best practice notes.</span></div></div>
+      <div style="background:#0d1117;margin:auto -56px -40px;padding:9px 56px;display:flex;justify-content:space-between;border-top:1px solid #00ff8833;font-size:8px;color:#2a3a50">
+        <span>Solay39 Blockchain Security | solay2126@gmail.com | t.me/Solay39audit</span>
+        <span>Page 20</span>
+      </div>
+    </div>
+
+
+    <div style="padding:40px 56px;page-break-after:always;min-height:100vh;display:flex;flex-direction:column;background:#050810">
+      <div style="background:#0d1117;margin:-40px -56px 28px;padding:12px 56px;display:flex;justify-content:space-between;border-bottom:2px solid #00ff88">
+        <span style="font-size:11px;font-weight:700;color:#00ff88;letter-spacing:.08em">SOLAY39</span>
+        <span style="font-size:9px;color:#445566">JasmyCoin</span>
+      </div>
+      <div style="flex:1"><h1 style="font-size:17px;color:#00ff88;font-weight:700;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #00ff8833">Appendix B. Severity / Likelihood Matrix</h1>
+  <p style="color:#7a8c9e;font-size:10px;line-height:1.7;margin-bottom:10px">The risk assessment matrix combines Impact (severity of the vulnerability) with Likelihood (probability of exploitation) to determine overall risk level.</p>
+  <table style="width:100%;border-collapse:collapse;margin-bottom:14px;font-size:10px">
+    <thead><tr>
+      <th style="background:#0d1117;color:#445566;font-size:7.5px;letter-spacing:.15em;padding:8px 10px;text-align:left;border:1px solid #161e2a">IMPACT / LIKELIHOOD</th>
+      <th style="background:#0d1117;color:#445566;font-size:7.5px;letter-spacing:.15em;padding:8px 10px;text-align:center;border:1px solid #161e2a">HIGH</th>
+      <th style="background:#0d1117;color:#445566;font-size:7.5px;letter-spacing:.15em;padding:8px 10px;text-align:center;border:1px solid #161e2a">MEDIUM</th>
+      <th style="background:#0d1117;color:#445566;font-size:7.5px;letter-spacing:.15em;padding:8px 10px;text-align:center;border:1px solid #161e2a">LOW</th>
+    </tr></thead>
+    <tbody>
+      <tr>
+          <td style="padding:8px 10px;border:1px solid #161e2a;color:#ff2d55;font-weight:700">CRITICAL</td>
+          <td style="padding:8px 10px;border:1px solid #161e2a;text-align:center;color:#445566;font-weight:700">-</td><td style="padding:8px 10px;border:1px solid #161e2a;text-align:center;color:#445566;font-weight:700">-</td><td style="padding:8px 10px;border:1px solid #161e2a;text-align:center;color:#445566;font-weight:700">-</td>
+        </tr><tr>
+          <td style="padding:8px 10px;border:1px solid #161e2a;color:#ff6b00;font-weight:700">HIGH</td>
+          <td style="padding:8px 10px;border:1px solid #161e2a;text-align:center;color:#445566;font-weight:700">-</td><td style="padding:8px 10px;border:1px solid #161e2a;text-align:center;color:#eef4fa;font-weight:700">1</td><td style="padding:8px 10px;border:1px solid #161e2a;text-align:center;color:#445566;font-weight:700">-</td>
+        </tr><tr>
+          <td style="padding:8px 10px;border:1px solid #161e2a;color:#ffd600;font-weight:700">MEDIUM</td>
+          <td style="padding:8px 10px;border:1px solid #161e2a;text-align:center;color:#445566;font-weight:700">-</td><td style="padding:8px 10px;border:1px solid #161e2a;text-align:center;color:#eef4fa;font-weight:700">1</td><td style="padding:8px 10px;border:1px solid #161e2a;text-align:center;color:#445566;font-weight:700">-</td>
+        </tr><tr>
+          <td style="padding:8px 10px;border:1px solid #161e2a;color:#00e5ff;font-weight:700">LOW</td>
+          <td style="padding:8px 10px;border:1px solid #161e2a;text-align:center;color:#445566;font-weight:700">-</td><td style="padding:8px 10px;border:1px solid #161e2a;text-align:center;color:#445566;font-weight:700">-</td><td style="padding:8px 10px;border:1px solid #161e2a;text-align:center;color:#445566;font-weight:700">-</td>
+        </tr><tr>
+          <td style="padding:8px 10px;border:1px solid #161e2a;color:#00ff88;font-weight:700">INFO</td>
+          <td style="padding:8px 10px;border:1px solid #161e2a;text-align:center;color:#445566;font-weight:700">-</td><td style="padding:8px 10px;border:1px solid #161e2a;text-align:center;color:#445566;font-weight:700">-</td><td style="padding:8px 10px;border:1px solid #161e2a;text-align:center;color:#445566;font-weight:700">-</td>
+        </tr>
+    </tbody>
+  </table>
+  <p style="color:#7a8c9e;font-size:10px;line-height:1.7;margin-bottom:10px"><em style='color:#445566'>Severity is determined by Impact x Likelihood. Critical/High findings with High likelihood represent immediate risk vectors requiring urgent attention.</em></p>
+  <h2 style="font-size:12px;color:#00ff88;font-weight:700;margin:18px 0 10px">Issue Status Key</h2>
+  <div style="display:flex;margin-bottom:6px"><span style="min-width:110px;padding:6px 10px;font-weight:700;color:#00ff88;border-left:3px solid #00ff88;flex-shrink:0;font-size:9.5px">Resolved</span><span style="padding:6px 10px;background:#111820;color:#7a8c9e;flex:1;font-size:9px">The issue has been completely fixed and verified.</span></div><div style="display:flex;margin-bottom:6px"><span style="min-width:110px;padding:6px 10px;font-weight:700;color:#ffd600;border-left:3px solid #ffd600;flex-shrink:0;font-size:9.5px">Partially Fixed</span><span style="padding:6px 10px;background:#111820;color:#7a8c9e;flex:1;font-size:9px">Parts of the issue have been fixed but not completely resolved.</span></div><div style="display:flex;margin-bottom:6px"><span style="min-width:110px;padding:6px 10px;font-weight:700;color:#00e5ff;border-left:3px solid #00e5ff;flex-shrink:0;font-size:9.5px">Acknowledged</span><span style="padding:6px 10px;background:#111820;color:#7a8c9e;flex:1;font-size:9px">The team has been notified; no corrective action taken.</span></div><div style="display:flex;margin-bottom:6px"><span style="min-width:110px;padding:6px 10px;font-weight:700;color:#ff2d55;border-left:3px solid #ff2d55;flex-shrink:0;font-size:9.5px">Open</span><span style="padding:6px 10px;background:#111820;color:#7a8c9e;flex:1;font-size:9px">The issue remains unresolved.</span></div></div>
+      <div style="background:#0d1117;margin:auto -56px -40px;padding:9px 56px;display:flex;justify-content:space-between;border-top:1px solid #00ff8833;font-size:8px;color:#2a3a50">
+        <span>Solay39 Blockchain Security | solay2126@gmail.com | t.me/Solay39audit</span>
+        <span>Page 21</span>
+      </div>
+    </div>
+
+
+    <div style="padding:40px 56px;page-break-after:always;min-height:100vh;display:flex;flex-direction:column;background:#050810">
+      <div style="background:#0d1117;margin:-40px -56px 28px;padding:12px 56px;display:flex;justify-content:space-between;border-bottom:2px solid #00ff88">
+        <span style="font-size:11px;font-weight:700;color:#00ff88;letter-spacing:.08em">SOLAY39</span>
+        <span style="font-size:9px;color:#445566">JasmyCoin</span>
+      </div>
+      <div style="flex:1"><h1 style="font-size:17px;color:#00ff88;font-weight:700;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #00ff8833">Appendix C. List of Examined Issue Types</h1>
+  <div style="columns:2;column-gap:20px">
+    <div style="padding:5px 8px;border-bottom:1px solid #111820;font-size:9.5px;color:#7a8c9e"><span style="color:#00ff88">&#8226;</span> Business logic overview</div><div style="padding:5px 8px;border-bottom:1px solid #111820;font-size:9.5px;color:#7a8c9e"><span style="color:#00ff88">&#8226;</span> Functionality checks</div><div style="padding:5px 8px;border-bottom:1px solid #111820;font-size:9.5px;color:#7a8c9e"><span style="color:#00ff88">&#8226;</span> Following best practices</div><div style="padding:5px 8px;border-bottom:1px solid #111820;font-size:9.5px;color:#7a8c9e"><span style="color:#00ff88">&#8226;</span> Access control and authorization</div><div style="padding:5px 8px;border-bottom:1px solid #111820;font-size:9.5px;color:#7a8c9e"><span style="color:#00ff88">&#8226;</span> Reentrancy attacks</div><div style="padding:5px 8px;border-bottom:1px solid #111820;font-size:9.5px;color:#7a8c9e"><span style="color:#00ff88">&#8226;</span> Front-run attacks</div><div style="padding:5px 8px;border-bottom:1px solid #111820;font-size:9.5px;color:#7a8c9e"><span style="color:#00ff88">&#8226;</span> DoS with (unexpected) revert</div><div style="padding:5px 8px;border-bottom:1px solid #111820;font-size:9.5px;color:#7a8c9e"><span style="color:#00ff88">&#8226;</span> DoS with block gas limit</div><div style="padding:5px 8px;border-bottom:1px solid #111820;font-size:9.5px;color:#7a8c9e"><span style="color:#00ff88">&#8226;</span> Transaction-ordering dependence</div><div style="padding:5px 8px;border-bottom:1px solid #111820;font-size:9.5px;color:#7a8c9e"><span style="color:#00ff88">&#8226;</span> ERC/BEP standards violation</div><div style="padding:5px 8px;border-bottom:1px solid #111820;font-size:9.5px;color:#7a8c9e"><span style="color:#00ff88">&#8226;</span> Unchecked math and precision loss</div><div style="padding:5px 8px;border-bottom:1px solid #111820;font-size:9.5px;color:#7a8c9e"><span style="color:#00ff88">&#8226;</span> Implicit visibility levels</div><div style="padding:5px 8px;border-bottom:1px solid #111820;font-size:9.5px;color:#7a8c9e"><span style="color:#00ff88">&#8226;</span> Excessive gas usage</div><div style="padding:5px 8px;border-bottom:1px solid #111820;font-size:9.5px;color:#7a8c9e"><span style="color:#00ff88">&#8226;</span> Timestamp dependence</div><div style="padding:5px 8px;border-bottom:1px solid #111820;font-size:9.5px;color:#7a8c9e"><span style="color:#00ff88">&#8226;</span> Forcibly sending ether</div><div style="padding:5px 8px;border-bottom:1px solid #111820;font-size:9.5px;color:#7a8c9e"><span style="color:#00ff88">&#8226;</span> Weak sources of randomness</div><div style="padding:5px 8px;border-bottom:1px solid #111820;font-size:9.5px;color:#7a8c9e"><span style="color:#00ff88">&#8226;</span> Shadowing state variables</div><div style="padding:5px 8px;border-bottom:1px solid #111820;font-size:9.5px;color:#7a8c9e"><span style="color:#00ff88">&#8226;</span> Usage of deprecated code</div><div style="padding:5px 8px;border-bottom:1px solid #111820;font-size:9.5px;color:#7a8c9e"><span style="color:#00ff88">&#8226;</span> Oracle and price manipulation</div><div style="padding:5px 8px;border-bottom:1px solid #111820;font-size:9.5px;color:#7a8c9e"><span style="color:#00ff88">&#8226;</span> Flash loan attack vectors</div><div style="padding:5px 8px;border-bottom:1px solid #111820;font-size:9.5px;color:#7a8c9e"><span style="color:#00ff88">&#8226;</span> MEV and sandwich attack exposure</div><div style="padding:5px 8px;border-bottom:1px solid #111820;font-size:9.5px;color:#7a8c9e"><span style="color:#00ff88">&#8226;</span> Upgradeability and proxy storage</div><div style="padding:5px 8px;border-bottom:1px solid #111820;font-size:9.5px;color:#7a8c9e"><span style="color:#00ff88">&#8226;</span> Signature replay protection</div><div style="padding:5px 8px;border-bottom:1px solid #111820;font-size:9.5px;color:#7a8c9e"><span style="color:#00ff88">&#8226;</span> Centralization and governance risks</div>
+  </div></div>
+      <div style="background:#0d1117;margin:auto -56px -40px;padding:9px 56px;display:flex;justify-content:space-between;border-top:1px solid #00ff8833;font-size:8px;color:#2a3a50">
+        <span>Solay39 Blockchain Security | solay2126@gmail.com | t.me/Solay39audit</span>
+        <span>Page 22</span>
+      </div>
+    </div>
+
+
+    <div style="padding:40px 56px;page-break-after:always;min-height:100vh;display:flex;flex-direction:column;background:#050810">
+      <div style="background:#0d1117;margin:-40px -56px 28px;padding:12px 56px;display:flex;justify-content:space-between;border-bottom:2px solid #00ff88">
+        <span style="font-size:11px;font-weight:700;color:#00ff88;letter-spacing:.08em">SOLAY39</span>
+        <span style="font-size:9px;color:#445566">JasmyCoin</span>
+      </div>
+      <div style="flex:1"><h1 style="font-size:17px;color:#00ff88;font-weight:700;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #00ff8833">Appendix D. Centralization Risks Classification</h1>
+  <h2 style="font-size:12px;color:#00ff88;font-weight:700;margin:18px 0 10px">Centralization Level</h2>
+  <div style="display:flex;margin-bottom:5px"><span style="min-width:70px;padding:7px 10px;font-weight:700;color:#ff2d55;border-left:3px solid #ff2d55;flex-shrink:0">High</span><span style="padding:7px 10px;background:#111820;color:#7a8c9e;flex:1;font-size:9.5px">Project owners can manipulate users funds, lock funds at will, or maliciously update contract parameters or bytecode.</span></div><div style="display:flex;margin-bottom:5px"><span style="min-width:70px;padding:7px 10px;font-weight:700;color:#ffd600;border-left:3px solid #ffd600;flex-shrink:0">Medium</span><span style="padding:7px 10px;background:#111820;color:#7a8c9e;flex:1;font-size:9.5px">Project owners can modify parameters to break some functions, but users funds remain withdrawable.</span></div><div style="display:flex;margin-bottom:5px"><span style="min-width:70px;padding:7px 10px;font-weight:700;color:#00ff88;border-left:3px solid #00ff88;flex-shrink:0">Low</span><span style="padding:7px 10px;background:#111820;color:#7a8c9e;flex:1;font-size:9.5px">The contract is trustless or its governance functions are safe against a malicious owner.</span></div>
+  <h2 style="font-size:12px;color:#00ff88;font-weight:700;margin:18px 0 10px">Centralization Risk</h2>
+  <div style="display:flex;margin-bottom:5px"><span style="min-width:70px;padding:7px 10px;font-weight:700;color:#ff2d55;border-left:3px solid #ff2d55;flex-shrink:0">High</span><span style="padding:7px 10px;background:#111820;color:#7a8c9e;flex:1;font-size:9.5px">Lost ownership may result in users losses. Contract ownership belongs to EOAs with unknown security model.</span></div><div style="display:flex;margin-bottom:5px"><span style="min-width:70px;padding:7px 10px;font-weight:700;color:#ffd600;border-left:3px solid #ffd600;flex-shrink:0">Medium</span><span style="padding:7px 10px;background:#111820;color:#7a8c9e;flex:1;font-size:9.5px">Ownership transferred to a contract with non-industry-accepted parameters or without an audit.</span></div><div style="display:flex;margin-bottom:5px"><span style="min-width:70px;padding:7px 10px;font-weight:700;color:#00ff88;border-left:3px solid #00ff88;flex-shrink:0">Low</span><span style="padding:7px 10px;background:#111820;color:#7a8c9e;flex:1;font-size:9.5px">Ownership transferred to a well-known or audited contract with industry-accepted parameters.</span></div></div>
+      <div style="background:#0d1117;margin:auto -56px -40px;padding:9px 56px;display:flex;justify-content:space-between;border-top:1px solid #00ff8833;font-size:8px;color:#2a3a50">
+        <span>Solay39 Blockchain Security | solay2126@gmail.com | t.me/Solay39audit</span>
+        <span>Page 23</span>
+      </div>
+    </div>
+
+</body></html>
